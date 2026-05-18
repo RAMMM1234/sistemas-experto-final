@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiabetesExpert AI - Evaluación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="app-container">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">AI</div>
+            <span>Expert System</span>
+        </div>
+        <nav>
+            <a href="{{ url_for('inicio') }}" class="nav-link">Inicio</a>
+            <a href="{{ url_for('cuestionario') }}" class="nav-link active">Evaluación</a>
+            <button id="btnAbrirHistorial" class="nav-link btn-link">Historial</button>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="main-header">
+            <h1>Evaluación de Diagnóstico</h1>
+            <p>Complete el análisis de síntomas para obtener una orientación preliminar.</p>
+        </header>
+
+        <form id="formulario" class="quiz-grid">
+            <div class="quiz-card">
+                <div class="card-icon">💧</div>
+                <h3>¿Siente mucha sed?</h3>
+                <div class="quiz-options">
+                    <label class="option">
+                        <input type="radio" name="sed" value="si" required>
+                        <span class="dot"></span>
+                        <span class="label-text">Sí</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="sed" value="no">
+                        <span class="dot"></span>
+                        <span class="label-text">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="card-icon">🚽</div>
+                <h3>¿Orina con frecuencia?</h3>
+                <div class="quiz-options">
+                    <label class="option">
+                        <input type="radio" name="orina" value="si" required>
+                        <span class="dot"></span>
+                        <span class="label-text">Sí</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="orina" value="no">
+                        <span class="dot"></span>
+                        <span class="label-text">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="card-icon">😫</div>
+                <h3>¿Siente cansancio?</h3>
+                <div class="quiz-options">
+                    <label class="option">
+                        <input type="radio" name="cansancio" value="si" required>
+                        <span class="dot"></span>
+                        <span class="label-text">Sí</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="cansancio" value="no">
+                        <span class="dot"></span>
+                        <span class="label-text">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="card-icon">👁️</div>
+                <h3>¿Visión borrosa?</h3>
+                <div class="quiz-options">
+                    <label class="option">
+                        <input type="radio" name="vision_borrosa" value="si" required>
+                        <span class="dot"></span>
+                        <span class="label-text">Sí</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="vision_borrosa" value="no">
+                        <span class="dot"></span>
+                        <span class="label-text">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="card-icon">📉</div>
+                <h3>¿Pérdida de peso?</h3>
+                <div class="quiz-options">
+                    <label class="option">
+                        <input type="radio" name="perdida_peso" value="si" required>
+                        <span class="dot"></span>
+                        <span class="label-text">Sí</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="perdida_peso" value="no">
+                        <span class="dot"></span>
+                        <span class="label-text">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="card-icon">👨‍👩‍👧‍👦</div>
+                <h3>¿Antecedentes?</h3>
+                <div class="quiz-options">
+                    <label class="option">
+                        <input type="radio" name="antecedentes" value="si" required>
+                        <span class="dot"></span>
+                        <span class="label-text">Sí</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="antecedentes" value="no">
+                        <span class="dot"></span>
+                        <span class="label-text">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" class="btn-submit">Realizar Evaluación</button>
+            </div>
+        </form>
+
+        <div id="resultado" class="resultado-moderno hidden"></div>
+    </main>
+</div>
+
+<div id="modalHistorial" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Historial de Evaluaciones</h2>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-body">
+            <ul id="listaHistorial"></ul>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

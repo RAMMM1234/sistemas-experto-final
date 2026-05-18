@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida - Sistema Experto Diabetes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body class="login-body">
+
+<div class="glass-overlay"></div> 
+
+<div class="main-wrapper">
+    <div class="expert-card">
+        
+        <div class="card-header">
+            <div class="status-badge">
+                <span class="pulse"></span>
+                Protocolo de Diagnóstico Activo
+            </div>
+            <span class="material-symbols-outlined main-logo">bloodtype</span>
+        </div>
+
+        <div class="card-content">
+            <h1>Sistema Experto <br><span>Prevención de Diabetes</span></h1>
+            <p class="subtitle">Análisis avanzado de indicadores metabólicos y factores de riesgo.</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="material-symbols-outlined icon-accent">biotech</span>
+                    <div>
+                        <h3>Inferencia Clínica</h3>
+                        <p>Detección de síntomas tempranos de diabetes.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="material-symbols-outlined icon-accent">verified_user</span>
+                    <div>
+                        <h3>Seguridad de Datos</h3>
+                        <p>Procesamiento bajo estándares profesionales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-action">
+            <a href="{{ url_for('cuestionario') }}" class="btn-primary-pro">
+                INICIAR EVALUACIÓN
+                <span class="material-symbols-outlined">arrow_forward_ios</span>
+            </a>
+        </div>
+        
+        <footer class="card-footer">
+            <span>© CORPORACIÓN MÉDICA 2026 - SISTEMA EXPERTO DE ÉLITE</span>
+        </footer>
+    </div>
+</div>
+
+</body>
+</html>
